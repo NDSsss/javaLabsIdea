@@ -7,31 +7,35 @@ public class Example {
         InputStream inputStream = System.in;
         Reader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        int lab = Integer.parseInt(bufferedReader.readLine());
-        switch (lab) {
-            case 1:
-                System.out.print(lab1());
-                break;
-            case 2:
-                System.out.print(lab2());
-                break;
-            case 3:
-                System.out.print(lab3());
-                break;
-            case 4:
-                System.out.print("is not done yet");
-                break;
-            case 5:
-                System.out.print(lab5());
-                break;
-            case 6:
-                break;
-            case 7:
-                System.out.print(lab7(bufferedReader.readLine()));
-                break;
-            case 8:
-                System.out.print(lab8(bufferedReader.readLine(), bufferedReader.readLine()));
-                break;
+        int lab = 11111111;
+        while (lab != 0) {
+            System.out.print('\n');
+            lab = Integer.parseInt(bufferedReader.readLine());
+            switch (lab) {
+                case 1:
+                    System.out.print(lab1());
+                    break;
+                case 2:
+                    System.out.print(lab2());
+                    break;
+                case 3:
+                    System.out.print(lab3());
+                    break;
+                case 4:
+                    System.out.print("is not done yet");
+                    break;
+                case 5:
+                    System.out.print(lab5());
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    System.out.print(lab7(bufferedReader.readLine()));
+                    break;
+                case 8:
+                    System.out.print(lab8(bufferedReader.readLine(), bufferedReader.readLine()));
+                    break;
+            }
         }
 
     }
@@ -131,14 +135,14 @@ public class Example {
                         array1Index++;
                     } else {
                         finalaArray[i] = array2Int[array2Index];
-                            array2Index++;
-                    }
-                } else if (array1Index == array1Int.length&&array2Index!=array2Int.length) {
-                        finalaArray[i] = array2Int[array2Index];
                         array2Index++;
-                } else if (array2Index == array2Int.length&&array1Index!=array1Int.length) {
-                        finalaArray[i] = array1Int[array1Index];
-                        array1Index++;
+                    }
+                } else if (array1Index == array1Int.length && array2Index != array2Int.length) {
+                    finalaArray[i] = array2Int[array2Index];
+                    array2Index++;
+                } else if (array2Index == array2Int.length && array1Index != array1Int.length) {
+                    finalaArray[i] = array1Int[array1Index];
+                    array1Index++;
                 }
             }
             String finalString = "";
@@ -150,35 +154,36 @@ public class Example {
             return e.getMessage();
         }
     }
-    public static class FooCorporation{
-        public String getSallary(int baseSallary, int hours){
-            if(baseSallary>0&&hours>0) {
+
+    public static class FooCorporation {
+        public String getSallary(int baseSallary, int hours) {
+            if (baseSallary > 0 && hours > 0) {
                 if (baseSallary < 300) {
                     return "Слишком маленькая ЗП";
                 }
                 if (hours > 60) {
                     return "Преработка";
                 }
-                int mainhours=40;
-                int extraHouts=hours-mainhours;
-                double sallary=0;
-                sallary=baseSallary*mainhours;
-                if(extraHouts>0){
-                    sallary+=baseSallary*1.5d*extraHouts;
+                int mainhours = 40;
+                int extraHouts = hours - mainhours;
+                double sallary = 0;
+                sallary = baseSallary * mainhours;
+                if (extraHouts > 0) {
+                    sallary += baseSallary * 1.5d * extraHouts;
                 }
-                return "Зарплата "+String.valueOf(sallary);
-            }else{
+                return "Зарплата " + String.valueOf(sallary);
+            } else {
                 return "Неверные входные данные";
             }
         }
     }
 
-    public static class Runner implements Comparable{
+    public static class Runner implements Comparable {
         private String name;
         private int time;
         private int position;
 
-        public Runner(String name, int time, int position){
+        public Runner(String name, int time, int position) {
             this.name = name;
             this.time = time;
             this.position = position;
@@ -191,7 +196,7 @@ public class Example {
 
         @Override
         public int compareTo(Object o) {
-            return time-((Runner)o).time;
+            return time - ((Runner) o).time;
         }
     }
 
@@ -221,8 +226,8 @@ public class Example {
             }
         }
 
-        public int enemies(){
-            return dist.length+1;
+        public int enemies() {
+            return dist.length + 1;
         }
 
         public String kill() {
